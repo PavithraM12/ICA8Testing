@@ -17,6 +17,10 @@ public class Urinals {
             return  false;
 
     }
+    static int multiply(int val1, int val2){
+        return val1 * val2;
+    }
+
 
 }
 

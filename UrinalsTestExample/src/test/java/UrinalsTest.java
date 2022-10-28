@@ -31,4 +31,12 @@ class UrinalsTest {
         //assertEquals("true", Urinals.validString("Hel1"));
         assertTrue(Urinals.validStringLength("Hel", 3));
     }
+
+
+    @Test
+    void multiply() {
+
+        System.out.println("====== Pavithra Moravaneni == TEST FOUR EXECUTED =======");
+        assertNotEquals(0, Urinals.multiply(1,1));
+    }
 }
