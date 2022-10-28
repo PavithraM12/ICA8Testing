@@ -75,6 +75,12 @@ class UrinalsTest {
         assertTrue(file.exists());
     }
 
+    @Test
+    void writeFile() {
+        System.out.println("====== Pavithra Moravaneni == TEST NINE EXECUTED =======");
+        Urinals.writeFile(Urinals.readFile(),"rule.txt");
+    }
+
 
 //    @Test
 //    void writeFile() {

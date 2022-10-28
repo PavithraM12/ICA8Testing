@@ -96,32 +96,32 @@ public class Urinals {
        return count;
     }
 
-//    static void writeFile(){
-//        int n =0;
-//        try {
-//            File file = new File("src/main/java/rule.txt");
-//            System.out.println(file);
-//            if (file.createNewFile()) {
-//                FileWriter f1 = new FileWriter("file");
-//                System.out.println(f1);
-//                //f1.write(Urinals.UrinalSequence(Urinals.readFile().toString()));
-//                for(String s2 : strList){
-//                    System.out.println(s2);
-//                    String s3 = String.valueOf(UrinalSequence(s2));
-//                    System.out.println(s3);
-//                    f1.write(s3 + "\n");
-//                }
-//            }
-//            else{
-//                while(file.exists()){
-//                   String  name = file.getName().toString() + (n++) + ".txt";
-//                   file = new File("src/main/java/", name);
-//                }
-//            }
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
+    static void writeFile(List<String> str, String text){
+        String path = "src/main/java";
+        int count=0;
+        File file = new File(path, text);
+        while(file.exists()){
+            text = "rule" + (++count) + ".txt";
+            file = new File(path, text);
+        }
+        FileWriter fw=null;
+        try{
+             fw = new FileWriter(file);
+            for(int i=0; i<str.size();i++){
+                fw.write(String.valueOf(str.get(i)));
+                fw.write("\n");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }finally {
+            try{
+                fw.close();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
 
 
 }
