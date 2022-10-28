@@ -9,3 +9,7 @@ Problem:
 -> Code checks for sequence of 0's, if three are 0 in sequence 1 will be replaced and increase the count
 
 -> Now code will return number of zeros can be changed to 1 with displaying the count
+
+Run 
+-> testMain() in UrinalsTest.java
+-> Will read the file and check the sequence of characters and write the count into the file
