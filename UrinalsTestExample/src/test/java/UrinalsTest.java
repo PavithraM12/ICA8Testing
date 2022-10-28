@@ -54,8 +54,21 @@ class UrinalsTest {
     @Test
     void readFile() {
         System.out.println("====== Pavithra Moravaneni == TEST SIX EXECUTED =======");
-        assertTrue(Urinals.readFile());
+        Urinals.readFile();
     }
 
 
+//    @Test
+//    void writeFile() {
+//        System.out.println("====== Pavithra Moravaneni == TEST SEVEN EXECUTED =======");
+//            Urinals.writeFile();
+//
+//    }
+
+//    @Test
+//    void testMain() {
+//       // String s1 = Urinals.readFile();
+//       // Urinals.UrinalSequence(s1);
+//        Urinals.writeFile();
+//    }
 }

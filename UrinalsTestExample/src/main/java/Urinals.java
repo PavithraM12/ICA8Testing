@@ -1,22 +1,21 @@
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /*
 @author Pavithra Moravaneni
  */
 public class Urinals {
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args) {
 
         //int c = Urinals.UrinalSequence(Urinals.readFile().toString());
         //Urinals.writeFile();
+        //int s =Urinals.UrinalSequence(readFile().toString());
         //String s2 = Urinals.readString();
 //       Urinals.readFile();
 //       int c = Urinals.UrinalSequence("0000");
-        //System.out.println(c);
+       // System.out.println(c);
         //Urinals.UrinalSequence(Urinals.readFile());
 
         // System.out.println(c);
@@ -44,34 +43,38 @@ public class Urinals {
         return val1 * val2;
     }
 
-    static Boolean readFile() {
-        String str;
-
-        File fle = new File("src/main/java/urinal.dat");
+    static ArrayList readFile() {
         try {
-            FileReader fr = new FileReader(fle);
-            BufferedReader br = new BufferedReader(fr);
+            BufferedReader br = new BufferedReader(new FileReader("src/main/java/urinal.dat"));
+            String str;
+            ArrayList inputArr = new ArrayList();
+            ArrayList outputArr = new ArrayList();
             while ((str = br.readLine()) != null) {
-                //System.out.println(str);
+                if(str=="-1"){
+                    return inputArr;
+                }
+                inputArr.add(str);
             }
-            br.close();
-            return true;
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            for(int i=0; i<inputArr.size();i++){
+                if(UrinalSequence(inputArr.get(i).toString())==-1){
+                    outputArr.add(-1);
+                    return outputArr;
+                }
+                outputArr.add(UrinalSequence(inputArr.get(i).toString()));
+            }
+            return outputArr;
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
-
-    static int UrinalSequence(String ur1) {
+        static int UrinalSequence(String ur) {
         int count = 0;
-        String ur = Urinals.readFile().toString();
+       //String ur = Urinals.readFile().toString();
+        //System.out.println(ur);
         if (ur.contains("11"))
             return -1;
-
-
-        char[] ch = ur.toCharArray();
+       char[] ch = ur.toCharArray();
         for (int i = 0; i < ch.length - 1; i++) {
             if (i == 0) {
                 if (ch[i] == '0' && ch[i + 1] == '0') {
@@ -90,30 +93,35 @@ public class Urinals {
         if (ch[ch.length - 1] == '0' && ch[ch.length - 2] == '0') {
             count++;
         }
-
-
-        return count;
+       return count;
     }
 
-    static void writeFile(){
-        int n =0;
-        try {
-            File file = new File("src/main/java/rule.txt");
-            if (file.createNewFile()) {
-                FileWriter f1 = new FileWriter("file");
-                f1.write(Urinals.UrinalSequence(Urinals.readFile().toString()));
-
-            }
-            else{
-                while(file.exists()){
-                   String  name = file.getName().toString() + (n++) + ".txt";
-                   file = new File("src/main/java/", name);
-                }
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    static void writeFile(){
+//        int n =0;
+//        try {
+//            File file = new File("src/main/java/rule.txt");
+//            System.out.println(file);
+//            if (file.createNewFile()) {
+//                FileWriter f1 = new FileWriter("file");
+//                System.out.println(f1);
+//                //f1.write(Urinals.UrinalSequence(Urinals.readFile().toString()));
+//                for(String s2 : strList){
+//                    System.out.println(s2);
+//                    String s3 = String.valueOf(UrinalSequence(s2));
+//                    System.out.println(s3);
+//                    f1.write(s3 + "\n");
+//                }
+//            }
+//            else{
+//                while(file.exists()){
+//                   String  name = file.getName().toString() + (n++) + ".txt";
+//                   file = new File("src/main/java/", name);
+//                }
+//            }
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
 
 }
