@@ -83,8 +83,14 @@ class UrinalsTest {
 
     @Test
     void badFileName() {
-        File file = new File("src/main/java/urinal.dat");
-      //  assertTrue();
+        File file = new File("src/main/java/rule.txt");
+//        String st = file.getName();
+//        System.out.println(st);
+//        String s1 = String.valueOf(file.getName().contains(".txt"));
+//        System.out.println(s1);
+        assertTrue(Urinals.badFileName(file));
+
+
     }
 
     @Test
@@ -92,6 +98,13 @@ class UrinalsTest {
         System.out.println("====== Pavithra Moravaneni == TEST TEN EXECUTED =======");
         File file = new File("src/main/java/rule.txt");
         assertTrue(file.exists());
+    }
+
+    @Test
+    void testMain() {
+        readFile();
+        writeFile();
+
     }
 
 
