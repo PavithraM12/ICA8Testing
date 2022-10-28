@@ -17,4 +17,10 @@ class UrinalsTest {
         assertEquals(val, output);
 
     }
+
+    @Test
+    void sum() {
+        System.out.println("====== Pavithra Moravaneni == TEST TWO EXECUTED =======");
+        assertEquals(2, Urinals.sum(1,1));
+    }
 }
