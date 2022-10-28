@@ -14,7 +14,8 @@ class UrinalsTest {
         System.out.println("====== Pavithra Moravaneni == TEST ONE EXECUTED =======");
         boolean val=true;
         boolean output = Urinals.goodExample("Not yet implemented");
-        assertEquals(val, output);
+        //assertEquals(val, output);
+        assertTrue(output);
 
     }
 
@@ -22,5 +23,12 @@ class UrinalsTest {
     void sum() {
         System.out.println("====== Pavithra Moravaneni == TEST TWO EXECUTED =======");
         assertEquals(2, Urinals.sum(1,1));
+    }
+
+    @Test
+    void validString() {
+        System.out.println("====== Pavithra Moravaneni == TEST THREE EXECUTED =======");
+        //assertEquals("true", Urinals.validString("Hel1"));
+        assertTrue(Urinals.validStringLength("Hel", 3));
     }
 }
