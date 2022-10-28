@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 /*
 @author Pavithra Moravaneni
  */
@@ -8,13 +9,13 @@ class UrinalsTest {
 
     @Test
     void main() {
-        assertEquals("Hello World","Hello World");
+        assertEquals("Hello World", "Hello World");
     }
 
     @Test
     void testGoodExample() {
         System.out.println("====== Pavithra Moravaneni == TEST ONE EXECUTED =======");
-        boolean val=true;
+        boolean val = true;
         boolean output = Urinals.goodExample("Not yet implemented");
         //assertEquals(val, output);
         assertTrue(output);
@@ -24,7 +25,7 @@ class UrinalsTest {
     @Test
     void sum() {
         System.out.println("====== Pavithra Moravaneni == TEST TWO EXECUTED =======");
-        assertEquals(2, Urinals.sum(1,1));
+        assertEquals(2, Urinals.sum(1, 1));
     }
 
     @Test
@@ -39,7 +40,7 @@ class UrinalsTest {
     void multiply() {
 
         System.out.println("====== Pavithra Moravaneni == TEST FOUR EXECUTED =======");
-        assertNotEquals(0, Urinals.multiply(1,1));
+        assertNotEquals(0, Urinals.multiply(1, 1));
     }
 
 
@@ -55,4 +56,6 @@ class UrinalsTest {
         System.out.println("====== Pavithra Moravaneni == TEST SIX EXECUTED =======");
         assertTrue(Urinals.readFile());
     }
+
+
 }
