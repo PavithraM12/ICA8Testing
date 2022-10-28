@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /*
@@ -55,6 +57,13 @@ class UrinalsTest {
     void readFile() {
         System.out.println("====== Pavithra Moravaneni == TEST SIX EXECUTED =======");
         Urinals.readFile();
+    }
+
+    @Test
+    void testReadEmptyFile() {
+        System.out.println("====== Pavithra Moravaneni == TEST SEVEN EXECUTED =======");
+        File file = new File("src/main/java/urinal.dat");
+        assertTrue(file.length()>0);
     }
 
 
