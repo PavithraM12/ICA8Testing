@@ -4,16 +4,18 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
-
+/*
+@author Pavithra Moravaneni
+ */
 public class Urinals {
     public static void main(String[] args) throws IOException {
 
         //int c = Urinals.UrinalSequence();
 
         //String s2 = Urinals.readString();
-       Urinals.readFile();
-       int c = Urinals.UrinalSequence("0000");
-        System.out.println(c);
+//       Urinals.readFile();
+//       int c = Urinals.UrinalSequence("0000");
+//        System.out.println(c);
        //Urinals.UrinalSequence(Urinals.readFile());
 
        // System.out.println(c);
@@ -41,7 +43,7 @@ public class Urinals {
         return val1 * val2;
     }
 
-    static String readFile(){
+    static Boolean readFile(){
        String str;
 
        File fle = new File("src/main/java/urinal.dat");
@@ -49,15 +51,16 @@ public class Urinals {
            FileReader fr = new FileReader(fle);
             BufferedReader br = new BufferedReader(fr);
             while((str=br.readLine())!=null){
-                System.out.println(str);
+                //System.out.println(str);
             }
             br.close();
+           return true;
        } catch (FileNotFoundException e) {
            throw new RuntimeException(e);
        } catch (IOException e) {
            throw new RuntimeException(e);
        }
- return str;
+
     }
 
 static int UrinalSequence(String ur){

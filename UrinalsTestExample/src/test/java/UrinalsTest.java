@@ -1,7 +1,9 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/*
+@author Pavithra Moravaneni
+ */
 class UrinalsTest {
 
     @Test
@@ -46,5 +48,11 @@ class UrinalsTest {
         System.out.println("====== Pavithra Moravaneni == TEST FIVE EXECUTED =======");
         String s1 = "011";
         assertEquals(-1, Urinals.UrinalSequence(s1));
+    }
+
+    @Test
+    void readFile() {
+        System.out.println("====== Pavithra Moravaneni == TEST SIX EXECUTED =======");
+        assertTrue(Urinals.readFile());
     }
 }
