@@ -39,4 +39,12 @@ class UrinalsTest {
         System.out.println("====== Pavithra Moravaneni == TEST FOUR EXECUTED =======");
         assertNotEquals(0, Urinals.multiply(1,1));
     }
+
+
+    @Test
+    void urinalSequence() {
+        System.out.println("====== Pavithra Moravaneni == TEST FIVE EXECUTED =======");
+        String s1 = "011";
+        assertEquals(-1, Urinals.UrinalSequence(s1));
+    }
 }
