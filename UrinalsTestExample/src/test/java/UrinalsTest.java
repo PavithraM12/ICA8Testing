@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -51,6 +52,7 @@ class UrinalsTest {
         System.out.println("====== Pavithra Moravaneni == TEST FIVE EXECUTED =======");
         String s1 = "011";
         assertEquals(-1, Urinals.UrinalSequence(s1));
+        assertEquals(3,Urinals.UrinalSequence("00000"));
     }
 
     @Test
@@ -64,6 +66,13 @@ class UrinalsTest {
         System.out.println("====== Pavithra Moravaneni == TEST SEVEN EXECUTED =======");
         File file = new File("src/main/java/urinal.dat");
         assertTrue(file.length()>0);
+    }
+
+    @Test
+    void testReadFileException() throws IOException {
+        System.out.println("====== Pavithra Moravaneni == TEST EIGHT EXECUTED =======");
+        File file = new File("src/main/java/urinal.dat");
+        assertTrue(file.exists());
     }
 
 
