@@ -81,6 +81,19 @@ class UrinalsTest {
         Urinals.writeFile(Urinals.readFile(),"rule.txt");
     }
 
+    @Test
+    void badFileName() {
+        File file = new File("src/main/java/urinal.dat");
+      //  assertTrue();
+    }
+
+    @Test
+    void testWriteFileException() {
+        System.out.println("====== Pavithra Moravaneni == TEST TEN EXECUTED =======");
+        File file = new File("src/main/java/rule.txt");
+        assertTrue(file.exists());
+    }
+
 
 //    @Test
 //    void writeFile() {

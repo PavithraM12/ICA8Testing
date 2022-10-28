@@ -8,7 +8,9 @@ import java.util.List;
 public class Urinals {
 
     public static void main(String[] args) {
-
+       File file = new File("src/main/java/rule");
+         Urinals.badFileName(file);
+        //System.out.println(b);
         //int c = Urinals.UrinalSequence(Urinals.readFile().toString());
         //Urinals.writeFile();
         //int s =Urinals.UrinalSequence(readFile().toString());
@@ -94,6 +96,13 @@ public class Urinals {
             count++;
         }
        return count;
+    }
+
+    static void badFileName(File file){
+        file = new File("src/main/java/rule.txt");
+        if(file.getName().toLowerCase().endsWith(".txt")) {
+            System.out.println("txt file");
+        }
     }
 
     static void writeFile(List<String> str, String text){
